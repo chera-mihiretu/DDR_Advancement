@@ -1,0 +1,11 @@
+{% extends 'polls/base.html' %}
+{% block main_content %}
+        {% if questions %}
+        <ul>
+            {% for question in questions %}
+                <li><a href="{{question.id}}">{{question.q_text}}</a></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+{% endblock %}

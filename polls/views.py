@@ -1,15 +1,22 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from .models import Question
 # Create your views here.
 def showQuestion(request): 
-    return HttpResponse("Hello, world. You're at the polls index.")
+    questions = Question.objects.order_by('-pub_date')
+    context = {
+        'questions': questions,
+    }
+
+    return render(request, 'polls/index.html', context)
 
 
 def detail(request, question_id):
-    questions = Question.objects.order_by('-pub_date')[:5]
-    output = ', '.join([q.q_text for q in questions])
-    return HttpResponse(f"{output}" )
+    question = get_object_or_404(Question, pk=question_id)
+
+
+
+    return render(request, 'polls/detail.html', {'question': question})
 
 def result(request, question_id):
    
