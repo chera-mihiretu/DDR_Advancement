@@ -1,9 +1,17 @@
+<!-- 
+This template extends the base template 'polls/base.html' and defines the 'main_content' block.
+Within this block, it checks if there are any questions available.
+If questions are available, it generates an unordered list (<ul>) where each question is displayed as a list item (<li>).
+Each list item contains a link (<a>) to the detail view of the question, using the question's ID to construct the URL.
+The text of the link is the question's text.
+-->
 {% extends 'polls/base.html' %}
 {% block main_content %}
         {% if questions %}
         <ul>
+            
             {% for question in questions %}
-                <li><a href="{{question.id}}">{{question.q_text}}</a></li>
+                <li><a href="{% url 'polls:detail' question.id %}"> {{ question.question_text }}</a></li>
             {% endfor %}
         </ul>
         {% endif %}
