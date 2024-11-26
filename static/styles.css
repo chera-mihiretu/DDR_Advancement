@@ -1,0 +1,130 @@
+/* General styling */
+body {
+    background-color: #F0F1F3;
+    font-family: Arial, sans-serif;
+    color: #132238;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styling */
+header {
+    background-color: #132238;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header h1 {
+    font-size: 36px;
+}
+
+header p {
+    font-size: 18px;
+}
+
+/* Footer styling */
+footer {
+    background-color: #132238;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Main content styling */
+h2 {
+    color: #2B384C;
+    text-align: center;
+    margin-top: 30px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+ul li {
+    margin: 10px 0;
+}
+
+a {
+    color: #A53DFF;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #B764FF;
+}
+
+/* Form styling */
+form {
+    width: 50%;
+    margin: 20px auto;
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 16px;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #2B384C;
+    border-radius: 4px;
+}
+
+form button {
+    background-color: #A53DFF;
+    color: #FFFFFF;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+}
+
+form button:hover {
+    background-color: #B764FF;
+}
+
+/* Book detail page styling */
+.book-detail {
+    padding: 20px;
+    background-color: #FFFFFF;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.book-detail h3 {
+    color: #2B384C;
+    margin-top: 20px;
+}
+
+.book-detail ul {
+    list-style: none;
+    padding: 0;
+}
+
+.book-detail ul li {
+    margin-bottom: 10px;
+}
+
+.book-detail ul li strong {
+    color: #132238;
+}

@@ -4,7 +4,7 @@ from typing import *
 class Book(models.Model):
     title = models.CharField(max_length=200)
     author = models.CharField(max_length=200)
-    publication_date = models.DatinseField()
+    publication_date = models.DateField()
     pages = models.IntegerField(default=0)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     genre = models.CharField(max_length=200)
@@ -19,7 +19,7 @@ class BookComments(models.Model):
         return self.comment
 
 class BookLikes(models.Model):
-    book = models.FeriegnKey(Book, on_delete=models.CASCADE)
+    book = models.ForeignKey(Book, on_delete=models.CASCADE)
     likes = models.IntegerField(default=0)
     def __str__(self) -> str:
         return str(self.likes)

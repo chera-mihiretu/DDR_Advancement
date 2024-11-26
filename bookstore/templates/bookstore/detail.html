@@ -1,17 +1,30 @@
-{% include 'header.html' %}
-<div>
-    <h2>{{ book.title }}</h2>
-    <p><strong>Author:</strong> {{ book.author }}</p>
-    <p><strong>Publish Date:</strong> {{ book.publish_date }}</p>
-    <p><strong>Pages:</strong> {{ book.pages }}</p>
-    <p><strong>Price:</strong> {{ book.price }}</p>
-    <p><strong>Genre:</strong> {{ book.genre }}</p>
-    <p><strong>Likes:</strong> {{ book.likes }}</p>
-    <h3>Comments:</h3>
-    <ul>
-        {% for comment in book.comments.all %}
-        <li>{{ comment.text }}</li>
-        {% endfor %}
-    </ul>
-</div>
-{% include 'footer.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    {% include 'header.html' %}
+    <div class="book-detail">
+        <h2>{{ book.title }}</h2>
+        <p><strong>Author:</strong> {{ book.author }}</p>
+        <p><strong>Publish Date:</strong> {{ book.publish_date }}</p>
+        <p><strong>Pages:</strong> {{ book.pages }}</p>
+        <p><strong>Price:</strong> {{ book.price }}</p>
+        <p><strong>Genre:</strong> {{ book.genre }}</p>
+        <p><strong>Likes:</strong> {{ book.likes }}</p>
+        <h3>Comments:</h3>
+        <ul>
+            {% for comment in book.comments.all %}
+            <li>{{ comment.text }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% include 'footer.html' %}
+
+</body>
+</html>

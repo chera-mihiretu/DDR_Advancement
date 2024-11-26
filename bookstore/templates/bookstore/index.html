@@ -1,10 +1,26 @@
-{% include 'header.html' %}
-<div>
-    <h2>Books List</h2>
-    <ul>
-        {% for book in books %}
-        <li><a href="{% url 'book_detail' book.id %}">{{ book.title }}</a></li>
-        {% endfor %}
-    </ul>
-</div>
-{% include 'footer.html' %}
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'bookstore/styles.css' %}">
+</head>
+<body>
+
+    {% include 'bookstore/header.html' %}
+    <div>
+        <h2>Books List</h2>
+        <ul>
+            {% for book in books %}
+            <li><a href="{% url 'book_detail' book.id %}">{{ book.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% include 'bookstore/footer.html' %}
+
+    
+</body>
+</html>
