@@ -8,6 +8,7 @@ class Book(models.Model):
     pages = models.IntegerField(default=0)
     price = models.DecimalField(max_digits=10, decimal_places=2)
     genre = models.CharField(max_length=200)
+    likes = models.IntegerField(default=0)
     def __str__(self) -> str:
         return self.title
 
@@ -18,8 +19,3 @@ class BookComments(models.Model):
     def __str__(self) -> str:
         return self.comment
 
-class BookLikes(models.Model):
-    book = models.ForeignKey(Book, on_delete=models.CASCADE)
-    likes = models.IntegerField(default=0)
-    def __str__(self) -> str:
-        return str(self.likes)

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
 <body>
-    {% include 'header.html' %}
+    {% include 'bookstore/header.html' %}
     <div class="book-detail">
         <h2>{{ book.title }}</h2>
         <p><strong>Author:</strong> {{ book.author }}</p>
@@ -17,6 +17,14 @@
         <p><strong>Price:</strong> {{ book.price }}</p>
         <p><strong>Genre:</strong> {{ book.genre }}</p>
         <p><strong>Likes:</strong> {{ book.likes }}</p>
+
+        <!-- Like Button -->
+        <form method="post" action="{% url 'likeBook' book.id %}">
+            {% csrf_token %}
+            <button type="submit">Like</button>
+            <span>{{ book.likes.first.lik  }} Likes</span>
+        </form>
+
         <h3>Comments:</h3>
         <ul>
             {% for comment in book.comments.all %}
@@ -24,7 +32,14 @@
             {% endfor %}
         </ul>
     </div>
-    {% include 'footer.html' %}
+
+    <form method="post" action="{% url 'commentOnBook' book.id %}">
+        {% csrf_token %}
+        <label for="comment">Comment:</label>
+        <textarea id="comment" name="comment" required></textarea><br>
+        <button type="submit">Add Comment</button>
+    </form>
+    {% include 'bookstore/footer.html' %}
 
 </body>
 </html>

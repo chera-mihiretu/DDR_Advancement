@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{% static 'bookstore/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
 <body>
 
@@ -15,7 +15,7 @@
         <h2>Books List</h2>
         <ul>
             {% for book in books %}
-            <li><a href="{% url 'book_detail' book.id %}">{{ book.title }}</a></li>
+            <li><a href="{% url 'detailBook' book.id %}">{{ book.title }}</a></li>
             {% endfor %}
         </ul>
     </div>

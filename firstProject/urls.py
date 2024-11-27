@@ -23,5 +23,4 @@ urlpatterns = [
     path('polls/', include('polls.urls'), name='polls'),
     path('bookstore/', include('bookstore.urls'), name='bookstore'),
     path('',views.hellow),
-
 ]
