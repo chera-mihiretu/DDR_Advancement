@@ -2,7 +2,70 @@
 This is the project that may contain DJango and React JS as well as docker container
 
 
+# DATE NOV 22
 
+### DJANGO TEMPLATE 
+Whenever we are working on simple Project we can use templates to render the output of out backend operation.
+
+Template -> Simple index with some extra sysntax of python 
+
+The data are fitted into the html page through django 
+
+For every application we might have a page for that we place our html files inside The app folder 
+
+```bash
+bookstore
+├── admin.py
+├── apps.py
+├── forms.py
+├── __init__.py
+├── models.py
+├── static
+│   └── styles.css
+├── templates
+│   └── bookstore
+│       ├── detail.html
+│       ├── footer.html
+│       ├── header.html
+│       ├── index.html
+│       ├── insert.html
+│       └── update.html
+├── tests.py
+├── urls.py
+└── views.py
+```
+
+In the above file the folder templates is placed in the app directory [templates] is necessary.
+
+Then inside that we will again create a directory of the same name of the app This will help django the relevant page to the application.
+
+Then the pages will go inside the /templates/[app_name]/
+
+if you want to use css files for your pages you cannot use it directly that is why we need the static directory.
+
+
+To use the css file in your page 
+
+```html
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="{% static 'styles.css' %}">
+    </head>
+    <body>
+    </body>
+</html>
+```
+
+Dont forget to include 
+```python 
+# setttins.py
+STATIC_URL = 'static/'
+```
 
 # DATE NOV 27
 ### DJANGO CRUD OPERATION 
