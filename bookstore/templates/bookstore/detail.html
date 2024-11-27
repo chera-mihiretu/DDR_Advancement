@@ -19,21 +19,29 @@
         <p><strong>Likes:</strong> {{ book.likes }}</p>
 
         <!-- Like Button -->
-        <form method="post" action="{% url 'likeBook' book.id %}">
+        <form method="post" action="{% url 'detailBook' book.id %}">
+            <input type="hidden" name="like">
             {% csrf_token %}
             <button type="submit">Like</button>
             <span>{{ book.likes.first.lik  }} Likes</span>
         </form>
-
+        <form action="{% url 'deleteBook' book.id %}" method="post">
+            {% csrf_token %}
+            <button type="submit">Delete Book</button>
+        </form>
         <h3>Comments:</h3>
         <ul>
-            {% for comment in book.comments.all %}
-            <li>{{ comment.text }}</li>
+            {% for comment in comments %}
+            <li>{{ comment.comment }}</li>
+            <form method="post", action="{% url 'deleteComment' comment.id %}">
+                {% csrf_token %}
+                <button type="submit">Delete Book</button>
+            </form>
             {% endfor %}
         </ul>
     </div>
 
-    <form method="post" action="{% url 'commentOnBook' book.id %}">
+    <form method="post" action="{% url 'detailBook' book.id %}">
         {% csrf_token %}
         <label for="comment">Comment:</label>
         <textarea id="comment" name="comment" required></textarea><br>
